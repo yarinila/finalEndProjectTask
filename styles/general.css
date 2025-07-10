@@ -1,0 +1,552 @@
+﻿/*קריאה לפונט מגוגל פונטס*/
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans+Hebrew&display=swap');
+
+body {
+    direction: rtl;
+    width: 1280px;
+    margin: 0 auto;/*מירכוז כל התוכן לאמצע העמוד, האוטומטי משמש לאיזון המרחקים מהצדדים*/
+    background-color: #FFF9ED;
+}
+
+/*תפריט ניווט*/
+#Ylogo{
+    width: 170px;
+    height: 170px;
+    display: block;  /* להגדיר שהתמונה תהיה לבדה */
+    margin: 0 auto; /* האוטומטי משמש לאיזון המרחקים מהצדדים כך שהתמונה תתמרז לאמצע */
+}
+
+#YmainNav{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;/*מירכוז כל התוכן לאמצע העמוד, האוטומטי משמש לאיזון המרחקים מהצדדים*/
+}
+
+#YmainNav ul{
+    margin: 0 auto;
+    padding: 0;
+    list-style: none; /*שלא יהיו הסימונים של הרשימות*/
+}
+
+#YmainNav ul li{
+    display: inline-block;
+    width: 120px;
+    float: right; /*גורם לכל האלמנטים בשורה להיצמד אחד לשני מימין*/
+}
+
+#YmainNav ul li a{
+    
+    display: block;
+    text-decoration: none; /*שלא יהיו את הקווים מתחת לטקסט של הקישור*/
+    background-color: #FFE67C;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* צל עדין */
+    color: black;
+    width: 120px;
+    height: 40px;
+    padding-top:10px; /*משמש להרחקת הטקסט מהמסגרת העליונה*/
+    text-align: center; /*למרכז את הטקסט לאמצע*/
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#YmainNav ul li a:hover{
+    background-color: white; /*כאשר עומדים על הקישור עם העכבר הרקע יהיה לבן*/
+}
+
+#YmainNav ul li ul{
+    display:none;
+    position: absolute;
+}
+
+#YmainNav ul li ul a{
+    background-color: #FFED93;
+    font-weight: normal;
+}
+
+#YmainNav ul li:hover ul{
+    display: block;
+    width: 120px;
+}
+
+
+
+
+/*כללי*/
+h1 {
+    direction: rtl;
+    font-size: 40px;
+    text-align: center;
+    font-family: "Playpen Sans Hebrew", sans-serif;
+}
+
+h2 {
+    direction: rtl;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 70px;
+    font-family: "Playpen Sans Hebrew", sans-serif;
+}
+
+p{
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    margin: 0 auto 30px auto; /* האוטומטי משמש לאיזון המרחקים מהצדדים כך שהטקסט יתרכז לאמצע */
+    font-size: 22px;
+}
+
+/*עמוד הבית*/
+#Ymap{
+    display: block;
+    margin: 0 auto 30px auto; /* האוטומטי משמש לאיזון המרחקים מהצדדים כך שהטבלה תתמרז לאמצע */
+    width: 1000px;
+    height: auto; /*לשמור על הגובה של התמונה ביחס לרוחב הנתון על מנת לשמור על פרופורציה*/
+}
+
+#YcountriesImgs{
+    background-image: url("../images/index/tableBackground.png");
+    background-size: 300px;
+    background-repeat: repeat;
+    display: block; 
+    margin: 0 auto; /* האוטומטי משמש לאיזון המרחקים מהצדדים כך שהטבלה תתמרז לאמצע */
+    width: 820px;
+    height: 980px;
+    padding: 20px;
+}
+
+.Ycountries{
+    width: 250px;
+    height: 320px;
+    margin: 10px;
+    /*טרנסישן זה שהפעולה תקרה בהדרגה*/
+    /*טרנסופרמ גורם להגדלה*/
+    /*0.3s אומר כמה זמן יקח לאנימציה לקרות*/
+    transition: transform 0.3s , box-shadow 0.3s ease;
+}
+
+.Ycountries:hover {
+    transform: scale(1.05); /*גורם לתמונה לגדול ב־5% מגודלה הרגיל*/
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.YnotActive{
+    cursor: not-allowed;
+}
+
+
+
+
+/*פירורי לחם*/
+.breadcrumb {
+    direction: rtl;
+    margin: 30px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px;
+}
+
+.breadcrumb ol li {
+    display: inline-block;
+    /*שורה אחת עם שליטה על גודל ומרווחים*/
+}
+
+.breadcrumb ol li:after {  /*בין פריטים*/
+    content: ">";
+
+}
+
+.breadcrumb ol li:last-child:after { /* אחרי אחרון */
+    content: "";
+}
+
+.breadcrumb a {
+    color: black;
+    background-color: #FFED93;
+    padding: 10px; /*רווח פנימי*/
+    border-radius: 17px; /*עיגול פינה*/
+    transition: 0.2s ease; /*זמן מעבר*/
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    background-color: #FFF5C1;
+    color: black;
+}
+
+.breadcrumb #Mactive {
+    text-decoration: underline;
+}
+
+
+
+
+/*איטליה*/
+#Mitaly{
+    background-image: url("../images/italy/lemonns.png");
+    background-size: 1000px;
+    background-repeat: repeat;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    direction: rtl;
+    text-align: right;
+    line-height: 2; /*ריווח בין שורות*/
+}
+#MfoodTable {
+    border: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#MfoodTable p {
+    background-color: white;
+    padding: 10px 10px;
+    box-shadow: 0 0 5px #0d3b66;
+}
+
+.MfoodImage {
+    direction: ltr;
+    width: 287px;
+    height: auto;
+}
+
+.MviewImage {
+    direction: ltr;
+    width: 420px;
+    height: auto;
+    padding-right: 30px;
+}
+
+#MstoryTable {
+    border: none;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.McenterTables table {
+    margin: 0 auto;
+}
+
+.MviewImage:hover {
+    width: 550px;
+    height: auto;
+    transition: 0.8s;
+}
+
+.MfoodImage:hover {
+    width: 330px;
+    height: auto;
+    transition: 0.8s;
+}
+
+
+
+
+/*יפן*/
+#Ejapan{
+    background-image: url("../images/japan/japanBackground.png");
+    background-size: 1000px;
+    background-repeat: repeat;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    direction: rtl;
+    text-align: right;
+    line-height: 2; /*ריווח בין שורות*/
+}
+
+#EkyotoImage {
+    direction: ltr;
+    width: 420px ;
+    height: auto ;
+    padding-right: 30px;
+}
+
+#EresteurantImage {
+    direction: ltr;
+    width: 287px ;
+    height: auto ;
+}
+
+#EsecondTable p{
+    background-color: white;
+    padding: 10px 10px;
+    box-shadow: 0 0 5px #0d3b66;
+    margin-left: 50px;
+}
+
+.EcenterTable{
+    border: none;
+    margin: 0 auto;
+    
+}
+
+h3 {
+    direction: rtl;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 47px;
+    font-family: "Playpen Sans Hebrew", sans-serif;
+}
+
+#Erecipe {
+    background-image: url("../images/japan/recipe.png"); /* מסלול לתמונה */
+    background-size: 60%;        /* מגדיל את התמונה פי 2 */
+    background-position: center;  /* ממרכז את התמונה */
+    background-repeat: no-repeat;
+    width: 100vw;                 /* רוחב כל המסך */
+    height: 100vh;                /* גובה כל המסך */
+    list-style-position: inside;
+
+    margin: 160px auto;
+    padding: 80px 60px;
+    text-align: center;
+
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    line-height: 1.8
+}
+
+#EtextRotate {
+    padding-left: 100px;
+    padding-bottom: 20px;
+    transform: rotate(4deg); /* משנה את הזוית - מספר חיובי מסובב ימינה */
+    display: inline-block; /* נדרש כדי ש-transform יעבוד על טקסט */
+}
+
+
+
+
+/*אודות*/
+.information-box{
+    background-color: #D7F1F4;
+    padding: 45px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    font-family: "open sans", sans-serif;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.information-box p {
+    margin-bottom: 20px;
+    font-family: "open sans", sans-serif;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: auto;
+}
+
+.credits{
+    text-align: center;
+    line-height: 4;
+}
+
+.credits p{
+    font-family: "open sans", sans-serif;
+    text-align: center;
+    font-size: 20px;
+}
+
+.bold-name{
+    font-family: 'Playpen Sans Hebrew', sans-serif;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.us-image{
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    height: auto;
+}
+.document-list{
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    width: 110px;
+}
+.document-list li{
+    list-style-type:none;
+    font-family: "open sans", sans-serif;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.document-list a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+}
+
+.document-list a:hover {
+    color: #ecab16;
+    text-decoration: underline;
+}
+
+.document-list a:active {
+    color: #0134ff;
+}
+
+.document-list a:visited {
+    color: #7a6d6d;
+}
+
+
+.location-element{
+    width: 18px;
+    margin-left: 10px;
+}
+
+.wave-element{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: auto;
+    z-index: -1;
+}
+.travel-element {
+    position: absolute;
+    left: 0;
+    width: 900px;
+    height: auto;
+    display: block;
+}
+
+
+
+
+/*מפת האתר*/
+#RsiteMap{
+    background-image: url("../images/siteMap/aboutBackround.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.map-box {
+    background-color: #D7F1F4;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    min-height: 300px;
+}
+.map-grid {
+    text-align: center;
+}
+
+.column {
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+    min-width: 120px;
+    font-family: "Open Sans", sans-serif;
+}
+.column ul {
+    list-style: none;
+    padding: 0;
+    font-size: 24px;
+}
+.column ul li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.active:hover {
+    text-decoration: underline;
+    color: #ecab16;
+}
+
+.active:active {
+    color: #0134ff;
+    font-size: large;
+}
+
+.active:visited{
+    color: rgb(161, 144, 116);
+    font-size:24px;
+}
+
+.notActive{
+    cursor: not-allowed;
+}
+
+.titlelink a {
+    text-decoration: none;
+    color: black;
+}
+
+.titlelink a:hover {
+    text-decoration: underline;
+    color: #ecab16;
+}
+
+.titlelink a:active{
+    color: #0134ff;
+    font-size: large;
+}
+.active:visited{
+    color: rgb(161, 144, 116);
+    font-size:24px;
+}
+
+
+
+
+/*צור קשר*/
+#McontactSection {
+    direction: rtl;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    margin: 0;
+}
+
+#McontactSection p {
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 5px;
+}
+
+#footerImg {
+    width: 100%;
+    height: auto;
+    margin-top: 1px;
+}
+#sendForm {
+    font-family: "Playpen Sans Hebrew", sans-serif;
+    background-color: #f4b400;
+    margin-top:20px;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    width: 100px;
+    font-size: 22px;
+    border: none; /*בלי מסגרת*/
+    border-radius: 12px;
+}
+
+#sendForm:hover {
+    background-color:#ffe18f;
+    color: black;
+    transition: 0.5s;
+}
+
+.Mrequired::after {
+    content: "*"; /*סימון חובת מענה בכוכבית*/
+    color: red;
+    margin-right: 7px;
+}
+
+
+
+
+
